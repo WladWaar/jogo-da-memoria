@@ -1,0 +1,73 @@
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px 80px;
+}
+body {
+    background-image: url(../images/montanha_genshin.webp);
+    background-size: cover;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    padding: 30px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 2fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.img {
+    width: 125px;
+    margin: 50px auto;
+}
+
+.card {
+    aspect-ratio: 41/71;
+    width: 90%;
+    border-radius: 5px;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+    transition: all ease 500ms;
+}
+
+.front {
+    transform: rotateY(180deg);
+    border: 3px solid gray;
+}
+
+.back {
+    background-image: url(/images/back_cartao_genshin.png);
+    backface-visibility: hidden;
+    border: 3px solid gray;
+}
+
+.reveal-card {
+    transform: rotateY(180deg);
+}
+
+.disabled-card {
+    filter: saturate(0);
+    opacity: 0.5;
+}
